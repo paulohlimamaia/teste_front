@@ -77,7 +77,7 @@ export default {
 
     data () {
       return {
-        url:  'http://127.0.0.1:8001/api',
+        url:  'http://127.0.0.1:8000/api',
         tableOptions: { 'thead': ['#', 'Marca', 'Litragem', 'Tipo', 'Quantidade', 'Valor unitário', 'Ações em massa', '*'] },
         search: '',
         table: {

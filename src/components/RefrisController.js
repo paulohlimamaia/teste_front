@@ -11,7 +11,7 @@ export default {
 
   store () {
     let self = this
-    Vue.http.post('http://127.0.0.1:8001/api', Serialize.toObject('form_refri')).then((response) => {
+    Vue.http.post('http://127.0.0.1:8000/api', Serialize.toObject('form_refri')).then((response) => {
       if (response.status === 200) {
         self.pageListarRefris()
       }
@@ -22,7 +22,7 @@ export default {
 
   update (idRefri) {
     let self = this
-    Vue.http.post('http://127.0.0.1:8001/api/' + idRefri, Serialize.toObject('form_refri')).then((response) => {
+    Vue.http.post('http://127.0.0.1:8000/api/' + idRefri, Serialize.toObject('form_refri')).then((response) => {
       if (response.status === 200) {
         self.pageListarRefris()
       }
@@ -41,7 +41,7 @@ export default {
   },
 
   carregaFormularioDeEdicao (idRefri) {
-    Vue.http.get('http://127.0.0.1:8001/api/' + idRefri).then((response) => {
+    Vue.http.get('http://127.0.0.1:8000/api/' + idRefri).then((response) => {
       LoadFormData.byIdInputs(response.data.dados)
     })
   },

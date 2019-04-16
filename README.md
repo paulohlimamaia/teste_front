@@ -1,29 +1,27 @@
-# teste_front
+# Frontend - Estoque
 
-## Project setup
-```
-npm install
-```
+Modelo de painel de estoque criado com [Vue.js](https://vuejs.org) e [Bootstrap 4](https://v4-alpha.getbootstrap.com). Desenvolvido por Paulo Henrique.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Pré requisitos:
 
-### Compiles and minifies for production
-```
-npm run build
-```
+- [Node.js](https://nodejs.org/en/) (versão 4.x, 8.x recomendado)
+- npm version 3+ e [Git](https://git-scm.com/).
 
-### Run your tests
-```
-npm run test
-```
+## Navegadores
+* Chrome, Firefox, Safari, Edge, IE11+
 
-### Lints and fixes files
-```
-npm run lint
-```
+## Instalação
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Para usar o frontend do projeto estoque basta seguir os passos abaixo:
+
+```
+# clone o repositorio
+$ git clone <link> estoque-front
+
+# Entre no repositório criado:
+$ cd estoque-front
+
+# Produção localhost:8080.
+$ sudo docker build -t estoque-front .
+$ sudo docker run -it -p 8080:8080 --name estoque-front estoque-front 
+```
