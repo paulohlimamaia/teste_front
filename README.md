@@ -7,6 +7,11 @@ Modelo de painel de estoque criado com [Vue.js](https://vuejs.org) e [Bootstrap 
 - [Node.js](https://nodejs.org/en/) (versão 4.x, 8.x recomendado)
 - npm version 3+ e [Git](https://git-scm.com/).
 
+## Pacotes de terceiros utilizados:
+
+- [vue-toasted](https://github.com/shakee93/vue-toasted)
+- [http-server](https://www.npmjs.com/package/http-server)
+
 ## Navegadores
 * Chrome, Firefox, Safari, Edge, IE11+
 
