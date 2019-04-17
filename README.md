@@ -22,6 +22,14 @@ $ git clone <link> estoque-front
 $ cd estoque-front
 
 # Produção localhost:8080.
-$ sudo docker build -t estoque-front .
-$ sudo docker run -it -p 8080:8080 --name estoque-front estoque-front 
+$ npm install http-server -g
+$ npm install
+# $ npm rebuild node-sass (Se houver erro na versão do node-sass basta rodar este comando antes na ordem apresentada)
+$ npm run build
+$ http-server ./dist &
+
+
+# Produção Docker (Erro menor na conexão com o container do backend, por este motivo este docker não está funcional)
+# $ sudo docker build -t estoque-front .
+# $ sudo docker run -it -p 8080:8080 --name estoque-front estoque-front 
 ```
