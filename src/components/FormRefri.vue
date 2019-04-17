@@ -5,7 +5,7 @@
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="marca">Marca</label>
-            <input type="text" class="form-control" id="marca" name="marca" placeholder="Marca" required>
+            <input type="text" class="form-control" id="marca" name="marca" placeholder="Marca" maxlength="30" required>
           </div>
           <div class="form-group col-md-6">
             <label for="litragem">Litragem</label>
@@ -30,7 +30,7 @@
         </div>
         <div class="form-group">
           <label for="quantidade">Quantidade</label>
-          <input type="number" class="form-control" id="quantidade" name="quantidade" placeholder="Quantidade" required>
+          <input type="number" class="form-control" id="quantidade" name="quantidade" placeholder="Quantidade" min="0" required>
         </div>
         <div class="form-row">
           <div class="form-group col-md-12">
