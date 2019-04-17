@@ -38,7 +38,8 @@
             <input type="text" class="form-control" id="valor_unidade" name="valor_unidade" placeholder="Valor" required >
           </div>
         </div>
-        <button type="button" id="btn_salvar" class="btn btn-primary" @click="salvaInformacoes()">Cadastrar</button>
+        <button type="button" id="btn_salvar" class="btn btn-primary" @click="salvaInformacoes()">Cadastrar</button>&nbsp;
+        <router-link :to="{name: 'home'}" href="#"><button class="btn btn-secondary" id="btn" type="button">Voltar</button></router-link>
       </form>
     </div>
   </div>

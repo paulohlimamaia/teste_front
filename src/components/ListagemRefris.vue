@@ -32,7 +32,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr v-for="dados in table.data" :key="dados.id_refri">
+              <tr v-show="table.data.length > 0" v-for="dados in table.data" :key="dados.id_refri">
                 <th scope="row">{{ dados.id_refri }}</th>
                 <td>{{ dados.marca }}</td>
                 <td>{{ dados.litragem }}</td>
@@ -43,9 +43,13 @@
                   <input :id="'refri_' + dados.id_refri" type="checkbox" @change="addRefri(dados.id_refri)">
                 </td>
                 <td>
-                  <button title="Editar Refrigerante" class="btn btn-primary" @click="paginaEdicao(dados.id_refri)"> Editar </button>
-                  <button title="Excluir Refrigerante" class="btn btn-primary" @click="excluirRefri(dados.id_refri)"> Excluir </button>
+                  <button title="Editar Refrigerante" class="btn btn-info" @click="paginaEdicao(dados.id_refri)"> Editar </button>
+                  &nbsp;
+                  <button title="Excluir Refrigerante" class="btn btn-danger" @click="excluirRefri(dados.id_refri)"> Excluir </button>
                 </td>
+              </tr>
+              <tr v-show="table.data.length === 0">
+                <td colspan="8" class="text-center">Nenhum registro encontrado.</td>
               </tr>
             </tbody>
           </table>
@@ -53,13 +57,15 @@
       </div>
       <div class="row">
         <div class="col-md-12 justify-content-center">
-          <button type="button" id="first_page" class="btn btn-primary" @click="firstPage()"> Primeira </button>
-          <button type="button" id="previous_page" class="btn btn-primary" @click="previousPage()"> Anterior </button>
+          <button type="button" id="first_page" class="btn btn-dark" @click="firstPage()"> Primeira </button>&nbsp;
+          <button type="button" id="previous_page" class="btn btn-dark" @click="previousPage()"> Anterior </button>&nbsp;
 
-          <button type="button" v-for="page in table.pages" :key="page" :class="page === table.currentPage ? 'btn btn-primary' : 'btn btn-primary'" @click="(page === table.currentPage ? null : pagePaginate(page))"> {{page}} </button>
+          <button type="button" v-for="page in table.pages" :key="page"
+           :class="page === table.currentPage ? 'btn btn-dark' : 'btn btn-dark'" @click="(page === table.currentPage ? null : pagePaginate(page))"> 
+           {{page}} </button>&nbsp;
 
-          <button type="button" id="next_page" class="btn btn-primary" @click="nextPage()"> Próxima </button>
-          <button type="button" id="last_page" class="btn btn-primary" @click="lastPage()"> Última </button>
+          <button type="button" id="next_page" class="btn btn-dark" @click="nextPage()"> Próxima </button>&nbsp;
+          <button type="button" id="last_page" class="btn btn-dark" @click="lastPage()"> Última </button>&nbsp;
         </div>
       </div>
     </div>
@@ -68,7 +74,6 @@
 
 <script>
 import RefrisController from './RefrisController'
-
 window._ = require('lodash')
 
 export default {
@@ -205,10 +210,11 @@ export default {
           this.table.data = this.table.data.filter(data => data.id_refri !== response.data.dados.id_refri)
         })
       },
+
       debounceInput: _.debounce(function (e) {
-      this.search = e.target.value
-      this.loadData()
-    }, 1000),
+        this.search = e.target.value
+        this.loadData()
+      }, 1000),
     }
 }
 </script>
