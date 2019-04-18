@@ -27,6 +27,7 @@ $ git clone git@github.com:paulohlimamaia/teste_front.git estoque-front
 $ cd estoque-front
 
 # Produção localhost:8080.
+- Certifique-se que a porta 8080 está livre em seu ambiente.
 $ npm install http-server -g
 $ npm install
 # $ npm rebuild node-sass (Se houver erro na versão do node-sass basta rodar este comando antes na ordem apresentada)
