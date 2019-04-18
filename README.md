@@ -21,7 +21,7 @@ Para usar o frontend do projeto estoque basta seguir os passos abaixo:
 
 ```
 # clone o repositorio
-$ git clone <link> estoque-front
+$ git clone git@github.com:paulohlimamaia/teste_front.git estoque-front
 
 # Entre no repositório criado:
 $ cd estoque-front
